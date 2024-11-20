@@ -1,12 +1,16 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 from werkzeug.utils import secure_filename
 import os
-from scripts.classifier import classifier
+from scripts.classifier_scripts.classifier import classifier
+
+
+model_path = r'flask\models\donut_finetuned.pth'
+processor_path = r'flask\models\donut_processor'
 
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Replace with a secure key
-app.config['UPLOAD_FOLDER'] = 'static/uploads/'
+app.config['UPLOAD_FOLDER'] = 'flask/static/uploads/'
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16 MB limit
 
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg'}
@@ -38,7 +42,8 @@ def index():
             # Process the file as needed
             # For demonstration, we'll just return the filename
             option = request.form.get('option')
-            result = classifier(filepath,option)
+            result = classifier(filepath,option,model_path,processor_path)
+            
         else:
             flash('Invalid file type')
             return redirect(request.url)
