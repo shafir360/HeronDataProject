@@ -2,7 +2,11 @@ import torch
 from transformers import BertTokenizer, BertForSequenceClassification
 import json
 
-def predict_word_class(word, model_dir="./bert-word-classifier"):
+
+
+
+
+def simpleInference(word, model_dir):
     # Load model and tokenizer
     tokenizer = BertTokenizer.from_pretrained(model_dir)
     model = BertForSequenceClassification.from_pretrained(model_dir)
@@ -25,8 +29,11 @@ def predict_word_class(word, model_dir="./bert-word-classifier"):
     # Convert prediction back to label
     return inverse_label_encoder[int(prediction)]
 
-
-
-test_word = "hsbe_statements_2022_02_23"
-predicted_class = predict_word_class(test_word)
-print(f"Predicted class for '{test_word}': {predicted_class}")
+test = False
+if test:
+    dir = r'C:\Users\Shafir R\Documents\code\herondata\HeronDataProject\flask\models\simpleModel'
+    test_word = "61NsUWXqelL"
+    predicted_class = simpleInference(test_word,dir)
+    print(f"Predicted class for '{test_word}': {predicted_class}")
+    print(predicted_class)
+    print(type(predicted_class))

@@ -4,8 +4,9 @@ import os
 from scripts.classifier_scripts.classifier import classifier
 
 
-model_path = r'flask\models\donut_finetuned.pth'
+model_path_advanced = r'flask\models\donut_finetuned.pth'
 processor_path = r'flask\models\donut_processor'
+model_path_simple = r'flask\models\simpleModel'
 
 
 app = Flask(__name__)
@@ -23,9 +24,6 @@ def allowed_file(filename):
 def index():
     result = None
     if request.method == 'POST':
-
-
-
         
         # Handle File Upload
         if 'file' not in request.files:
@@ -42,6 +40,12 @@ def index():
             # Process the file as needed
             # For demonstration, we'll just return the filename
             option = request.form.get('option')
+            if option == 'advanced':
+                model_path = model_path_advanced
+            elif option == 'simple':
+                model_path = model_path_simple
+            else:
+                return "Incorrect Option Selected (Internal Error)"
             result = classifier(filepath,option,model_path,processor_path)
             
         else:

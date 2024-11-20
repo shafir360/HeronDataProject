@@ -10,6 +10,7 @@ import glob
 parent_folder_synth = r"generators\filenameGen\genResult"
 parent_folder_real = r"dataset\raw"
 outFolder = 'fileNameDataset'
+name = 'smallSyntDataset'
 
 #helper function
 def find_filename_by_type(folder_path, file_type='.jpg'):
@@ -66,7 +67,7 @@ df = pd.DataFrame({
 #print(df.to_string(index=False))
 
 
-output_path = os.path.join(outFolder,'syntheticFilename')
+output_path = os.path.join(outFolder,name)
 print(df.shape[0])
 df.to_csv(output_path, index=False)
 

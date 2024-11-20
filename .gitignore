@@ -9,4 +9,7 @@ advancedClassification/donutFinal/
 temp/
 aws/model.tar.gz
 aws/awsContainer/model_final_0.pth
-flask/models/donut_finetuned.pth
+flask/models/
+classifierTraining/simpleModel/
+results
+flask/static/uploads/

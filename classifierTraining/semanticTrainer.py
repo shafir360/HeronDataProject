@@ -14,8 +14,9 @@ else:
     print("No GPU available, using CPU instead.")
 
 def train_model(dataset_path, output_dir="./bert-word-classifier", num_epochs=3):
+    print("Start of Train")
     # Load dataset
-    data = pd.read_csv(dataset_path)
+    data = pd.read_csv(dataset_path).sample(frac=1, random_state=42).reset_index(drop=True).head(70000)
 
     # Clean and normalize
     data['Data'] = data['Data'].str.lower().str.replace(r'[^a-z0-9 ]', ' ', regex=True)
@@ -106,6 +107,7 @@ def train_model(dataset_path, output_dir="./bert-word-classifier", num_epochs=3)
     print(f"Model and tokenizer saved to {output_dir}")
 
 
-# Ensure multiprocessing works correctly on Windows
+
 if __name__ == '__main__':
-    train_model(r'classifierTraining\fileNameDataset\syntheticFilename')
+    outputDir = 'classifierTraining/simpleModel'
+    train_model(r'classifierTraining\fileNameDataset\syntheticFilename',outputDir)
