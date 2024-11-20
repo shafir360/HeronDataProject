@@ -2,21 +2,55 @@ import random
 import string
 import os
 from datetime import datetime
+import shutil
 
 
 # Example usage
 inputFilenameDict = {
-    "BankStatements": ['bank_statement','statement_bank','bankStatements'],     # To store variations with random capitalization
-    "invoice": ['invoice','NewInvoice'],      
+    "BankStatements": ['bank_statement', 'statement_bank', 'bankStatements'],  # Variations for bank statements
+    "Invoice": ['invoice', 'NewInvoice'],  # Variations for invoices
+    "Payslips": ['payslip', 'pay_slip', 'salary_slip', 'payroll'],
+    "TaxDocuments": ['tax_return', 'tax_statement', 'tax_doc', 'taxform'],
+    "Contracts": ['contract', 'agreement', 'employment_contract', 'lease_agreement'],
+    "UtilityBills": ['utility_bill', 'electricity_bill', 'water_bill', 'gas_bill', 'phone_bill'],
+    "Receipts": ['receipt', 'purchase_receipt', 'sales_receipt', 'transaction_slip'],
+    "InsuranceDocuments": ['insurance_policy', 'insurance_doc', 'policy_statement'],
+    "IDProofs": ['passport', 'id_card', 'drivers_license', 'national_id'],
+    "EducationalCertificates": ['degree_certificate', 'diploma', 'transcript', 'education_record'],
+    "MedicalRecords": ['medical_report', 'health_record', 'doctor_prescription', 'lab_result'],
+    "LoanDocuments": ['loan_agreement', 'loan_statement', 'mortgage_doc'],
+    "PurchaseOrders": ['purchase_order', 'po', 'order_form', 'supplier_invoice'],
+    "BankCheques": ['bank_cheque', 'cheque_image', 'check'],
+    "MeetingMinutes": ['meeting_minutes', 'meeting_notes', 'minutes_of_meeting'],
+    "LegalDocuments": ['court_order', 'legal_notice', 'affidavit', 'power_of_attorney'],
+    "ShippingDocuments": ['bill_of_lading', 'packing_list', 'shipping_invoice'],
+    "JobApplications": ['resume', 'cv', 'cover_letter', 'job_application'],
+    "Miscellaneous": ['misc_doc', 'random_file', 'unknown', 'miscellaneous_document']
 }
-MaxVariationNumber = 100
 
 
-# Function to create the directory if it doesn't exist
-def create_result_folder():
-    folder_name = 'genResult'
-    if not os.path.exists(folder_name):
-        os.makedirs(folder_name)
+
+
+
+MaxVariationNumber = 100000
+
+
+
+
+
+total_variations = sum(len(variations) for variations in inputFilenameDict.values())
+
+
+def create_result_folder(folder_path = 'genResult'):
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    folder_name = os.path.join(script_dir, folder_path)
+    # Check if the folder exists
+    if os.path.exists(folder_name):
+        # Delete the existing folder and its contents
+        print("removed: ", folder_name)
+        shutil.rmtree(folder_name)
+    # Create the folder
+    os.makedirs(folder_name)
     return folder_name
 
 
@@ -113,9 +147,9 @@ def create_filename_variations(input_name,maxMistakes = 5):
 
 
 # Save variations to a specified folder
-def save_variations_to_file(folder_name, input_name, variations):
+def save_variations_to_file(folder_name, input_name, variations, parentFolder = 'genResult'):
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    folder_path = os.path.join(script_dir, 'genResult', folder_name)
+    folder_path = os.path.join(script_dir, parentFolder, folder_name)
 
     # Create folder if it doesn't exist
     if not os.path.exists(folder_path):
@@ -153,9 +187,10 @@ def run(input_name, folder_name, max_variations=100):
     print("Number of variations:", len(variations))
 
 # Main loop to process each entry in inputFilenameDict
+create_result_folder()
 for folder_name, filenames in inputFilenameDict.items():
     for input_name in filenames:
-        run(input_name, folder_name, MaxVariationNumber)
+        run(input_name, folder_name, max_variations = MaxVariationNumber)
 
 
 
