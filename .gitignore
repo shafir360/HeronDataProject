@@ -6,3 +6,6 @@ __pycache__
 *.pyc
 dataset/
 advancedClassification/donutFinal/
+temp/
+aws/model.tar.gz
+aws/awsContainer/model_final_0.pth
