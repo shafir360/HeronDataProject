@@ -1,0 +1,61 @@
+/* Ensure full background coverage */
+html, body {
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+    width: 100%; /* Ensure full width */
+    height: 100%; /* Ensure full height */
+    background-color: #f8f9fa; /* Set the desired background color */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Container styles */
+.container {
+    width: 100vw; /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    display: flex; /* Enable flexbox */
+    flex-direction: column; /* Arrange items vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    padding: 20px; /* Optional: Add internal padding */
+    background-color: #ffffff; /* Set container's background color */
+    margin: 0; /* Ensure no margin around the container */
+}
+
+/* Title styles */
+h1 {
+    color: #343a40;
+    margin-bottom: auto; /* Push the title to the top */
+    align-self: center; /* Center the title horizontally */
+}
+
+/* Content styles */
+.content {
+    display: flex;
+    flex-direction: column; /* Stack form fields/buttons */
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Optional: Adjust width of content */
+}
+
+/* Form label */
+.form-label {
+    font-weight: bold;
+}
+
+/* Button styles */
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 20px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Textarea styles */
+textarea {
+    resize: none;
+    font-family: inherit;
+    font-size: 1rem;
+}
