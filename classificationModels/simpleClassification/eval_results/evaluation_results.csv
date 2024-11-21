@@ -1,0 +1,11 @@
+Data,Label,Predicted,Correct
+water bill c770,UtilityBills,UtilityBills,True
+doctor prescription,MedicalRecords,MedicalRecords,True
+sgippang ilvoice,ShippingDocuments,ShippingDocuments,True
+pyaslip 20241115 r330,Payslips,Payslips,True
+pqozev bill,UtilityBills,UtilityBills,True
+invoice a910,Invoice,Invoice,True
+banksbatements,BankStatements,BankStatements,True
+purchase order,PurchaseOrders,PurchaseOrders,True
+phone bill v871,UtilityBills,UtilityBills,True
+phone ill 20241115 o350,UtilityBills,UtilityBills,True

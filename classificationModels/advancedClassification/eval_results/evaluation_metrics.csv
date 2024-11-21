@@ -1,0 +1,6 @@
+,precision,recall,f1-score,support
+class,0.9792,0.9747,0.9763,791.0
+text_sequence,0.9792,0.9747,0.9763,791.0
+accuracy,0.9747,0.9747,0.9747,791.0
+macro avg,0.9792,0.9747,0.9763,791.0
+weighted avg,0.9792,0.9747,0.9763,791.0
