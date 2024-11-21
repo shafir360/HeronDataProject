@@ -30,5 +30,5 @@ model_path = os.path.join(parent_dir, model_path)
 
 
 
-def test_classes(word, expected):
+def test_classify_filename_with_typos(word, expected):
     assert simpleInference(word,model_path) == expected

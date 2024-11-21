@@ -38,5 +38,5 @@ def path2image(file_path):
 )
 
 
-def test_classes(image_path, expected):
+def test_classify_document_basic(image_path, expected):
     assert advancedInference(path2image(image_path), model_path, processor_path)['text_sequence'] == expected
