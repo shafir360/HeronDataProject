@@ -5,11 +5,13 @@ venv
 __pycache__
 *.pyc
 dataset/
-advancedClassification/donutFinal/
+classificationModels/advancedClassification/donutFinal/
 temp/
 aws/model.tar.gz
 aws/awsContainer/model_final_0.pth
-flask/models/
-classifierTraining/simpleModel/
+src/models/
+classificationModels/simpleClassification/simpleModel/
 results
-flask/static/uploads/
+src/static/uploads/
+legacy
+
