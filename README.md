@@ -100,7 +100,7 @@ Configuration files, including model paths and deployment settings, are located 
 
 Testing is critical to validating the functionality and robustness of the classifiers. To run the test suite:
 ```bash
-pytest
+pytest testing/
 ```
 
 Key test cases include:

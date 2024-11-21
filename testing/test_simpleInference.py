@@ -19,7 +19,7 @@ model_path = os.path.join(parent_dir, model_path)
 @pytest.mark.parametrize(
     ('word', 'expected'),
     [
-        ('_Bankcheques2022_2', 'Bankcheques'),
+        ('_Bankcheques2022_2', 'BankCheques'),
         ('BnkSatements', 'BankStatements'),
         ('Cotcracts', 'Contracts'),
         ('EducationalCertificates', 'EducationalCertificates'),
