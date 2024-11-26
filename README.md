@@ -106,7 +106,6 @@ pytest testing/
 Key test cases include:
 - **Simple Classifier**: Validation of filename generation, classification accuracy, and performance metrics.
 - **Advanced Classifier**: Evaluation of model loading, classification accuracy across diverse formats, and edge case handling.
-- **Deployment Pipeline**: End-to-end tests of AWS SageMaker Batch Transform workflows.
 
 ---
 
