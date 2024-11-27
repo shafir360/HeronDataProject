@@ -3,8 +3,7 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 from werkzeug.utils import secure_filename
 import os
-from scripts.classifier_scripts.classifier import classifier
-
+from src.scripts.classifier_scripts.classifier import classifier 
 # Define paths to your models and processor
 model_path_advanced = r'src\models\donut_finetuned.pth'
 processor_path = r'src\models\donut_processor'

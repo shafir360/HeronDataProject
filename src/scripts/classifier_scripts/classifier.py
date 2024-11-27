@@ -4,8 +4,8 @@ import os
 from PIL import Image
 
 # Import your inference functions
-from scripts.classifier_scripts.advancedInference import advancedInference
-from scripts.classifier_scripts.simpleInference import simpleInference
+from src.scripts.classifier_scripts.advancedInference import advancedInference
+from src.scripts.classifier_scripts.simpleInference import simpleInference
 
 # Define allowed extensions for different file types
 allowedExtensions = {
